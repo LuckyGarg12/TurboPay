@@ -1,0 +1,12 @@
+{
+  "name": "@repo/store",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@4.9.4",
+  "dependencies": {
+    "jotai": "^2.14.0"
+  },
+  "exports": {
+    "./balance": "./src/hooks/useBalance.ts"
+  }
+}
