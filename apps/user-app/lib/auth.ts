@@ -22,7 +22,6 @@ export const authOptions = {
                 })
 
                 if (existingUser) {
-                    console.log(existingUser.password)
                     const passwordValidation = await argon2.verify(existingUser.password, credentials.password)
                     if (passwordValidation) {
                         return {
@@ -59,7 +58,7 @@ export const authOptions = {
     secret:process.env.NEXTAUTH_SECRET,
     callbacks: {
         session: ({session, token, user}:{session:Session,token:JWT,user:User}) => {
-            session.user.userId = token.sub as string
+            session.user.userId = token.sub || ""
 
             return session
         }
