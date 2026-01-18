@@ -22,11 +22,13 @@ model User {
   password          String                @unique
   OnRampTransaction OnRampTransaction[]
   Balance           balance[]
+  SentTransactions p2pTransaction[]      @relation("Sender")
+  ReceivedTransactions p2pTransaction[]  @relation("Receiver")
 }
 
 model merchant {
-  id        String    @default(uuid())
-  email     String    @unique
+  id        String      @id @default(uuid())
+  email     String      @unique
   name      String?
   auth_type AuthType
 }
@@ -48,6 +50,16 @@ model balance {
   amount  Int
   locked  Int
   user    User    @relation(fields: [userId], references: [id])
+}
+
+model p2pTransaction {
+  id          String   @id @default(uuid())
+  senderId    String
+  receiverId  String
+  amount      Int
+  timestamp   DateTime @default(now())
+  sender      User     @relation("Sender", fields: [senderId], references: [id])
+  receiver    User     @relation("Receiver", fields: [receiverId], references: [id])
 }
 
 enum AuthType {

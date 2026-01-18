@@ -1,7 +1,12 @@
 export default function Transactions() {
     return (
-        <div>
-            Transactions
+        <div className="w-full">
+            <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
+                Transactions
+            </div>
+            <div className="p-4">
+                Transactions page coming soon!
+            </div>
         </div>
     )
 }

@@ -4,11 +4,17 @@ import expreess from "express";
 const app = expreess()
 app.use(expreess.json())
 
+interface PaymentInformation {
+    token:string,
+    userId:string,
+    amount:number
+}
+
 app.post("/hdfcWebhook", async (req, res) => {
-    const paymentInformation = {
+    const paymentInformation: PaymentInformation = {
         token:req.body.token,
-        userId:req.body.user_identifier,
-        amount:req.body.amount
+        userId:req.body.userId,
+        amount:Number(req.body.amount)
     }
     
     try {
