@@ -29,5 +29,8 @@ jobs:
       - name: Rebuild argon2
         run: npm rebuild argon2
 
+      - name: Build prisma client
+        run: yarn run db:generate
+
       - name: Run build
         run: yarn build
