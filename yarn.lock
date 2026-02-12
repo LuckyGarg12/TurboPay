@@ -781,9 +781,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^6.15.0":
-  version: 6.15.0
-  resolution: "@prisma/client@npm:6.15.0"
+"@prisma/client@npm:^6.16.3":
+  version: 6.19.2
+  resolution: "@prisma/client@npm:6.19.2"
   peerDependencies:
     prisma: "*"
     typescript: ">=5.1.0"
@@ -792,7 +792,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/7743eeeb2303674596086137ef6af84f9c1c934bc67332bbb8b1c84917cf82e7c8224a634b20f17227dcafe9a7aba6989ed595959fc531657e4d487932af7060
+  checksum: 10c0/b1b81171af50627275f1f66ee44652363eb9b3e0fac60590f15a99e48ca434f0cbf8580c252f0b8f4268468be219ba4f18e338c6275a038f8473fad809a782f7
   languageName: node
   linkType: hard
 
@@ -858,7 +858,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@repo/db@workspace:packages/db"
   dependencies:
-    "@prisma/client": "npm:^6.15.0"
+    "@prisma/client": "npm:^6.16.3"
+    dotenv: "npm:^16.4.5"
     prisma: "npm:^6.16.3"
   languageName: unknown
   linkType: soft
@@ -2265,7 +2266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.6.1":
+"dotenv@npm:^16.4.5, dotenv@npm:^16.6.1":
   version: 16.6.1
   resolution: "dotenv@npm:16.6.1"
   checksum: 10c0/15ce56608326ea0d1d9414a5c8ee6dcf0fffc79d2c16422b4ac2268e7e2d76ff5a572d37ffe747c377de12005f14b3cc22361e79fc7f1061cce81f77d2c973dc

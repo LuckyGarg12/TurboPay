@@ -1,0 +1,11 @@
+FROM node:20.14-alpine 
+WORKDIR /usr/src/app
+RUN corepack enable && corepack prepare yarn@4.9.4 --activate
+COPY package*.json yarn.lock .yarnrc.yml turbo.json ./
+COPY apps ./apps
+COPY packages ./packages
+RUN yarn install --frozen-lockfile
+RUN yarn run db:generate
+RUN yarn build
+EXPOSE 3000 
+CMD ["yarn", "start-user-app"]
