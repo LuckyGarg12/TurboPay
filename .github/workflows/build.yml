@@ -19,8 +19,10 @@ jobs:
           node-version: '20'
       
       - name: Install dependencies
-      - run: yarn install
+        run: yarn install
+
+      - name: Rebuild argon2
+        run: npm rebuild argon2
 
       - name: Run build
-      - run: npm rebuild argon2
-      - run: yarn build
+        run: yarn build
